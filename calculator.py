@@ -24,26 +24,41 @@ def main():
 
     print("\n1. Addition\n2. Substraction\n3. Multiplication\n4. Division\n5. Quit")
     while True:
-        
-        choice = int(input("Enter the id to performe and action eg: 1, 2, 3, 4, 5: "))
-        if choice ==5:
+        try:
+            choice = int(input("Enter the id to performe and action eg: 1, 2, 3, 4, 5: "))
+        except ValueError:
+            print("Enter valid number")
+            break
+        if choice == 5:
             print("Bye, :D")
             break
+        elif choice > 5:
+            print("Invalid option")
+            break
+        try:
+            enter = float(input("Enter number one: "))
+            enter1 = float(input("Enter number two: "))
+        except ValueError:
+            print("Enter a valid number")
+            break
 
-        enter = float(input("Enter number one: "))
-        enter1 = float(input("Enter number two: "))
+        try:
+            if choice == 1:
+                print(addition(enter, enter1))
+            elif choice == 2:
+                print(substraction(enter, enter1))
+            elif choice == 3:
+                print(multiplication(enter, enter1))
+            elif choice == 4:
+                print(division(enter, enter1))
+            else:
+                print("Invalid Choice!")
+            clear()
+            print("\n1. Addition\n2. Substraction\n3. Multiplication\n4. Division\n5. Quit")
+        except ValueError:
+            print("Please enter a valid number")
+            break
 
-        if choice == 1:
-            print(addition(enter, enter1))
-        elif choice == 2:
-            print(substraction(enter, enter1))
-        elif choice == 3:
-            print(multiplication(enter, enter1))
-        elif choice == 4:
-            print(division(enter, enter1))
-        else:
-            print("Invalid Choice!")
-        clear()
 
 if __name__ == "__main__":
     main()
