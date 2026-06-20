@@ -8,7 +8,7 @@ def main():
     def addition(x, y):
         return x + y
 
-    def substraction(x, y):
+    def subtraction(x, y):
         return x - y
 
     def multiplication(x, y):
@@ -33,7 +33,7 @@ def main():
         if choice == 6:
             print("Bye, :D")
             break
-        elif choice > 6:
+        elif choice > 6 or choice < 0:
             print("Invalid option")
             continue
         try:
