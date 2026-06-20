@@ -7,7 +7,6 @@ def main():
 
     def addition(x, y):
         return x + y
-        clear()
 
     def substraction(x, y):
         return x - y
@@ -20,41 +19,45 @@ def main():
             return "Cant Divide!"
         return x / y
 
+    def exponation(x, y):
+        return x ** y
     print("Welcome To Calculator")
 
-    print("\n1. Addition\n2. Substraction\n3. Multiplication\n4. Division\n5. Quit")
+    print("\n1. Addition\n2. Substraction\n3. Multiplication\n4. Division\n5. Exponentiation\n6. Quit")
     while True:
         try:
-            choice = int(input("Enter the id to performe and action eg: 1, 2, 3, 4, 5: "))
+            choice = int(input("Enter the id to performe and action eg: 1, 2, 3, 4, 5, 6: "))
         except ValueError:
             print("Enter valid number")
-            break
-        if choice == 5:
+            continue
+        if choice == 6:
             print("Bye, :D")
             break
-        elif choice > 5:
+        elif choice > 6:
             print("Invalid option")
-            break
+            continue
         try:
             enter = float(input("Enter number one: "))
             enter1 = float(input("Enter number two: "))
         except ValueError:
             print("Enter a valid number")
-            break
+            continue
 
         try:
             if choice == 1:
                 print(addition(enter, enter1))
             elif choice == 2:
-                print(substraction(enter, enter1))
+                print(subtraction(enter, enter1))
             elif choice == 3:
                 print(multiplication(enter, enter1))
             elif choice == 4:
                 print(division(enter, enter1))
+            elif choice == 5:
+                print(exponation(enter, enter1))
             else:
                 print("Invalid Choice!")
             clear()
-            print("\n1. Addition\n2. Substraction\n3. Multiplication\n4. Division\n5. Quit")
+            print("\n1. Addition\n2. Substraction\n3. Multiplication\n4. Division\n5. Exponentiation\n6. Quit")
         except ValueError:
             print("Please enter a valid number")
             break
